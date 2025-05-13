@@ -18,8 +18,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem; /* Ukuran padding tetap */
-    height: 70px; /* Menetapkan tinggi header agar tetap konsisten */
+    padding: 1rem 2rem;
+    height: 70px;
     transition: all 0.3s ease;
   }
   
@@ -28,13 +28,13 @@
   }
   
   .logo img {
-    width: 120px; /* Menyesuaikan ukuran logo agar lebih kecil */
+    width: 120px;
     height: auto;
     transition: transform 0.3s ease;
   }
   
   .logo img:hover {
-    transform: scale(1.1); /* Efek hover pada logo */
+    transform: scale(1.1);
   }
   
   nav a {
@@ -82,7 +82,7 @@
   }
   
   .feature:hover {
-    transform: translateY(-5px); /* Efek hover pada setiap fitur */
+    transform: translateY(-5px);
   }
   
   .right {
@@ -111,23 +111,58 @@
     color: #34495e;
   }
   
+  .menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  
   /* Responsive layout */
   @media (max-width: 768px) {
     .container {
-      flex-direction: column;
+      flex-direction: column-reverse;
       padding: 1rem;
     }
   
+    .left, .right {
+      width: 90%;
+      flex: unset;
+    }
+  
     .right {
-      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  
+    .right img {
+      width: 90%;
+      height: auto;
+    }
+  
+    .menu-toggle {
+      display: block;
     }
   
     nav {
+      display: none;
       flex-direction: column;
-      text-align: center;
+      background-color: #111;
+      width: 100%;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      z-index: 999;
+      padding-bottom: 1rem;
+    }
+  
+    nav.active {
+      display: flex;
     }
   
     nav a {
-      margin-top: 1rem;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
     }
   }  
